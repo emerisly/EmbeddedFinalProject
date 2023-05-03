@@ -1,78 +1,29 @@
 ---
 layout: post
-title: Sample blog post
-subtitle: Each post also has a subtitle
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
-comments: true
+title: CS 3420 Final Project - PONG
+# subtitle: Each post also has a subtitle
+gh-repo: emerisly/embedded_final_project
+# gh-badge: [star, fork, follow]
+# tags: [test]
+# comments: true
 ---
 
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+## Introduction
 
-**Here is some bold text**
+We present a game called "Pong" that is designed to be played using a FRDM-K64F board connected to a local computer via a USB cable. The game interface, developed using Python, includes a graphical user interface (GUI) with a ball and a bar displayed on the computer screen. The ball moves around the screen, bouncing up and down, while simulating a basic physics engine with collisions. The FRDM-K64F board serves as the game controller, and players must use it to control the bar's movement and keep the ball bouncing by shaking the board in the desired direction. Each successful bounce earns the player one point, and the objective is to maintain the ball's movement for as long as possible. However, if the bar fails to catch the ball, causing it to fall below the bar, the game ends. Overall, our game "Pong" offers an engaging and challenging experience for players of all ages.
 
-## Here is a secondary heading
+## System Overview
 
-Here's a useless table:
+Our system comprises of two main components: the game logic and the controller logic. The game logic is written in PyGame and will run on a local computer, while the controller logic is a C program that will run on the FRDM-KL46Z board. The two components will be connected via a Universal Serial Bus (USB) cable, which will also provide power to the board.
+As a peripheral control for the game, the board, equipped with an accelerometer, will continuously read data from the accelerometer and send it to the laptop computer. The computer will interpret the data and trigger the corresponding action in the game. To achieve this, we plan to use a periodic real-time process that operates at a fixed interval, enabling us to monitor the board's movements and use it to control the game effectively.
+Overall, our system is designed to provide an engaging and interactive gaming experience, with the FRDM-KL46Z board acting as a reliable and responsive controller for the game.
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+[rest work in progress]
 
+## Video Demo
 
-How about a yummy crepe?
+## Technical Description
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+## Testing Scheme
 
-It can also be centered!
-
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
-
-Here's a code chunk:
-
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+## Additional Resources Used
